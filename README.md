@@ -8,3 +8,4 @@ Shop-App is a modern, responsive web application designed to provide a seamless 
 - Tailwind CSS
 - JavaScript
 - ReactJS
+- Firebase
