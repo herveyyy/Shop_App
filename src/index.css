@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-white text-black duration-1000;
+}
+.dark body {
+  @apply bg-gray-900 text-white duration-1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: spin 1s linear infinite;
+}
