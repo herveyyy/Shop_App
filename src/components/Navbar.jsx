@@ -43,15 +43,14 @@ function NavList() {
       {navListItems.map(({ label, icon }, key) => (
         <Typography
           key={label}
-          as="a"
-          href="#"
+          as="icon"
           variant="small"
           color="gray"
           className="font-medium text-blue-gray-500"
         >
-          <MenuItem className="flex items-center gap-2 md:rounded-full">
+          <MenuItem className="flex items-center gap-2 md:rounded-full dark:text-white  dark:hover:bg-gray-900">
             {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
-            <span className="text-gray-900"> {label}</span>
+            <span className="text-gray-900 dark:!text-white"> {label}</span>
           </MenuItem>
         </Typography>
       ))}
@@ -81,12 +80,12 @@ export function UserNavbar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl p-2 md:rounded-full md:pl-6 !bg-white">
+    <Navbar className="mx-auto max-w-screen-xl p-2 md:rounded-full md:pl-6 !bg-white dark:!bg-black dark:!border-gray-800">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium md:w-[20%] w-40 "
+          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium md:w-[20%] w-40 dark:text-white"
         >
           Project Shop
         </Typography>
@@ -95,18 +94,18 @@ export function UserNavbar() {
             <NavList />
           </div>
         </div>
-        <div className="w-full md:hidden flex justify-end">
+        <div className="w-full md:hidden flex justify-end ">
           <IconButton
             size="sm"
             color="blue-gray"
             onClick={() => setDarkMode(!darkMode)}
             variant="text"
-            className=" mr-2  "
+            className=" mr-2 "
           >
             {!darkMode ? (
-              <MoonIcon className="h-6 w-6" />
+              <MoonIcon className="h-6 w-6 " />
             ) : (
-              <SunIcon className="h-6 w-6" />
+              <SunIcon className="h-6 w-6 dark:!text-white" />
             )}
           </IconButton>
           <IconButton
@@ -114,7 +113,7 @@ export function UserNavbar() {
             color="blue-gray"
             variant="text"
             onClick={toggleIsNavOpen}
-            className=" mr-2 md:hidden"
+            className=" mr-2 md:hidden "
           >
             <Bars2Icon className="h-6 w-6" />
           </IconButton>
@@ -130,11 +129,11 @@ export function UserNavbar() {
           {!darkMode ? (
             <MoonIcon className="h-6 w-6" />
           ) : (
-            <SunIcon className="h-6 w-6" />
+            <SunIcon className="h-6 w-6 dark:!text-white" />
           )}
         </IconButton>
       </div>
-      <Collapse open={isNavOpen} className="overflow-scroll md:hidden">
+      <Collapse open={isNavOpen} className="overflow-scroll md:hidden ">
         <NavList />
       </Collapse>
     </Navbar>

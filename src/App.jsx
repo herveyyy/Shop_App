@@ -1,11 +1,10 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { Button, Navbar } from "@material-tailwind/react";
 import { Loading } from "./screens/Loading";
 import { UserNavbar } from "./components/Navbar";
 function App() {
   return (
     <div className="w-screen">
-      <div className="my-0 md:my-4">
+      <div className="absolute flex w-full mt-2 md:mt-4 px-4 md:mx-0">
         <UserNavbar />
       </div>
       <div className="text-center">
